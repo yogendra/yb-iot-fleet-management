@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * Entity class for total_traffic db table
- * 
+ *
  * @author abaghel
  *
  */
@@ -26,10 +26,10 @@ public class TotalTrafficData implements Serializable{
 	private String vehicleType;
 	@Column(value = "totalcount")
 	private long totalCount;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone="MST")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone="UTC")
 	@Column(value = "timestamp")
 	private Date timeStamp;
-	
+
 	public String getRouteId() {
 		return routeId;
 	}
@@ -65,6 +65,6 @@ public class TotalTrafficData implements Serializable{
 		return "TrafficData [routeId=" + routeId + ", vehicleType=" + vehicleType + ", totalCount=" + totalCount
 				+ ", timeStamp=" + timeStamp + "]";
 	}
-	
-	
+
+
 }

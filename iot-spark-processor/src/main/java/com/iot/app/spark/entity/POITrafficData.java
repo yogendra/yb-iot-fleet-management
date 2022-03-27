@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * Class to represent poi_tarffic db table
- * 
+ *
  * @author abaghel
  *
  */
@@ -15,7 +15,7 @@ public class POITrafficData implements Serializable {
 	private String vehicleId;
 	private double distance;
 	private String vehicleType;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone="MST")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone="UTC")
 	private Date timeStamp;
 
 	public String getVehicleId() {

@@ -12,13 +12,13 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * Entity class for poi_traffic db table
- * 
+ *
  * @author abaghel
  *
  */
 @Table("poi_traffic")
 public class POITrafficData implements Serializable{
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone="MST")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone="UTC")
 	@PrimaryKeyColumn(name = "timeStamp",ordinal = 0,type = PrimaryKeyType.PARTITIONED)
 	private Date timeStamp;
 	@PrimaryKeyColumn(name = "recordDate",ordinal = 1,type = PrimaryKeyType.CLUSTERED)
@@ -29,7 +29,7 @@ public class POITrafficData implements Serializable{
 	private double distance;
 	@Column(value = "vehicleType")
 	private String vehicleType;
-	
+
 	public Date getTimeStamp() {
 		return timeStamp;
 	}
@@ -60,5 +60,5 @@ public class POITrafficData implements Serializable{
 	public void setVehicleType(String vehicleType) {
 		this.vehicleType = vehicleType;
 	}
-	
+
 }

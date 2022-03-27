@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * Class to represent total_tarffic db table
- * 
+ *
  * @author abaghel
  *
  */
@@ -15,10 +15,10 @@ public class TotalTrafficData implements Serializable{
 	private String routeId;
 	private String vehicleType;
 	private long totalCount;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone="MST")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone="UTC")
 	private Date timeStamp;
 	private String recordDate;
-	
+
 	public String getRouteId() {
 		return routeId;
 	}
@@ -43,7 +43,7 @@ public class TotalTrafficData implements Serializable{
 	public void setTimeStamp(Date timeStamp) {
 		this.timeStamp = timeStamp;
 	}
-	
+
 	public String getRecordDate() {
 		return recordDate;
 	}
@@ -51,6 +51,6 @@ public class TotalTrafficData implements Serializable{
 	public void setRecordDate(String recordDate) {
 		this.recordDate = recordDate;
 	}
-	
-	
+
+
 }
